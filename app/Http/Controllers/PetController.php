@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 
 class PetController extends Controller
 {
+    /* Retorna a lista de Pets cadastrados
     
+    @return Collection
+    */
     public function index() 
     {
 
