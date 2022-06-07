@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AdocaoCollection;
 use App\Models\Adocao;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,9 @@ class AdocaoController extends Controller
 {
     public function index()
     {
-        return Adocao::with('pet')->get();
+        $adocoes = Adocao::with('pet')->get();
+
+        return new AdocaoCollection($adocoes);
     }
     /* Cria um novo registro de adoção
     @param Request $request
