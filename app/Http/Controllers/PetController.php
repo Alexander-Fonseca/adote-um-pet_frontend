@@ -6,6 +6,7 @@ use App\Http\Requests\PetRequest;
 use App\Models\Pet;
 use Illuminate\Http\Request;
 
+
 class PetController extends Controller
 {
     /* Retorna a lista de Pets cadastrados

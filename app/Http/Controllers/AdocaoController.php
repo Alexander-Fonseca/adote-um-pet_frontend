@@ -6,6 +6,7 @@ use App\Http\Resources\AdocaoCollection;
 use App\Models\Adocao;
 use Illuminate\Http\Request;
 
+
 class AdocaoController extends Controller
 {
     public function index()
@@ -22,7 +23,7 @@ class AdocaoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "email" => ['required', 'email'],
+            "email" => ['required', 'email', new AdocaoUnicaPet()],
             "valor" => ['required', 'numeric', 'between:10,100'],
             "pet_id" => ['required', 'int', 'exists:pets,id']
         ]);
