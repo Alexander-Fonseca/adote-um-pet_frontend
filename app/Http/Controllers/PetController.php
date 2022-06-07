@@ -20,8 +20,14 @@ class PetController extends Controller
 
     public function store(Request $request ){
 
+        $request->validate([
+            'nome'=> ['required', 'string', 'between:3,100'],
+            'historia' => ['required', 'string'],
+            'foto' => ['required', 'url', 'max: 1000']
+        ]);
+
         $dadosDoPet = $request->all();
-        dd($dadosDoPet);
         
+        return Pet::create($dadosDoPet);
     }
 }
