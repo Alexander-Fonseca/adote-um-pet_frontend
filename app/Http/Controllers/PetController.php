@@ -17,4 +17,11 @@ class PetController extends Controller
         return Pet::get(); 
 
     }
+
+    public function store(Request $request ){
+
+        $dadosDoPet = $request->all();
+        dd($dadosDoPet);
+        
+    }
 }
