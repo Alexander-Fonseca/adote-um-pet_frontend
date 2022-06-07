@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PetRequest;
 use App\Models\Pet;
 use Illuminate\Http\Request;
 
@@ -17,14 +18,12 @@ class PetController extends Controller
         return Pet::get(); 
 
     }
+    /* Cria um pet no banco de dados
+    @param PetRequest $request
+    @return Pet
+    */
 
-    public function store(Request $request ){
-
-        $request->validate([
-            'nome'=> ['required', 'string', 'between:3,100'],
-            'historia' => ['required', 'string'],
-            'foto' => ['required', 'url', 'max: 1000']
-        ]);
+    public function store(PetRequest $request){
 
         $dadosDoPet = $request->all();
         

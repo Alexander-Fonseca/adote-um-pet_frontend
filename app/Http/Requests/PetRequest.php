@@ -13,7 +13,7 @@ class PetRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class PetRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nome'=> ['required', 'string', 'between:3,100'],
+            'historia' => ['required', 'string'],
+            'foto' => ['required', 'url', 'max: 1000']
         ];
     }
 }
