@@ -24,3 +24,4 @@ Route::get('/pets', [PetController::class, 'index']);
 Route::post('/pets', [PetController::class, 'store']);
 
 Route::post('/adocoes', [AdocaoController::class, 'store']);
+Route::get('/adocoes', [AdocaoController::class, 'index']);

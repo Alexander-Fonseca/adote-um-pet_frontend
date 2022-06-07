@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AdocaoController extends Controller
 {
+    public function index()
+    {
+        return Adocao::with('pet')->get();
+    }
     /* Cria um novo registro de adoção
     @param Request $request
     @return Adocao
