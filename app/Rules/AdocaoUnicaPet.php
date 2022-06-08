@@ -2,6 +2,7 @@
 
 namespace App\Rules;
 
+use App\Models\Adocao;
 use Illuminate\Contracts\Validation\Rule;
 
 
@@ -12,10 +13,10 @@ class AdocaoUnicaPet implements Rule
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(
+        private int $petId
+    )
+    {}
 
     /**
      * Determine if the validation rule passes.
@@ -26,7 +27,11 @@ class AdocaoUnicaPet implements Rule
      */
     public function passes($attribute, $value)
     {
-        return false;
+        $jaAdotouEssePet = Adocao::where('email', $value)
+                ->where('pet_id',$this->petId)
+                ->first();
+
+        return !$jaAdotouEssePet;        
     }
 
     /**
@@ -36,6 +41,6 @@ class AdocaoUnicaPet implements Rule
      */
     public function message()
     {
-        return 'Não passou na validação';
+        return 'Voc~e já adotou esse Pet.';
     }
 }
