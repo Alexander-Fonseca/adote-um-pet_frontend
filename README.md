@@ -1,6 +1,7 @@
 # adote-um-pet
  (Parte Frontend)Projeto de um site para adoção de Pets, pelo TreinaWeb, aplicando conhecimentos de Frontend e Backend como: Typescript, Nodejs, Next.JS, Axios, React, SQLite, Insomnia, Laravel, PHP, DBeaver e Composer.
- <br>
+
+
  Para rodar no terminal: 
 * php artisan serve
 * npm run dev
