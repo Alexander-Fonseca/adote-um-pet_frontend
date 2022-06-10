@@ -1,5 +1,5 @@
 # adote-um-pet
- Parte Frontend do projeto adote um pet da Treinaweb.
+ Parte Frontend do projeto adote um pet da Treinaweb, utilizandoos conhecimentos como: Typescript, Nodejs, Next.JS, Axios, React.
  
  
 ![screencapture-localhost-3000-2022-06-10-14_34_13](https://user-images.githubusercontent.com/101671694/173122284-4dc0c6b5-3e62-4b7e-97b1-e6045ebb157c.png)
