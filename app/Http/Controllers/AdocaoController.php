@@ -13,7 +13,7 @@ class AdocaoController extends Controller
     public function index()
     {
         $adocoes = Adocao::with('pet')->get();
-
+        
         return new AdocaoCollection($adocoes);
     }
     /* Cria um novo registro de adoção
@@ -31,6 +31,6 @@ class AdocaoController extends Controller
 
         $dadosDaAdocao = $request->all();
 
-       return Adocao::create($dadosDaAdocao);
+        return Adocao::create($dadosDaAdocao);
     }
 }

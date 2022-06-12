@@ -5,7 +5,6 @@ namespace App\Rules;
 use App\Models\Adocao;
 use Illuminate\Contracts\Validation\Rule;
 
-
 class AdocaoUnicaPet implements Rule
 {
     /**
@@ -30,7 +29,6 @@ class AdocaoUnicaPet implements Rule
         $jaAdotouEssePet = Adocao::where('email', $value)
                 ->where('pet_id',$this->petId)
                 ->first();
-
         return !$jaAdotouEssePet;        
     }
 
